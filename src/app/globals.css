@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fcf6f8;
+  font-family: var(--font-cormorant), var(--font-noto-serif), 'Georgia', serif;
+  color: #2f2f2f;
+}
+
+/* 4分の1縮小ゴールド枠 */
+.paris-border {
+  border: 1px solid #d4af37;
+  box-shadow: 0 3px 6px -1px rgba(212, 175, 55, 0.15);
+}
+
+/* 全体のシーン切り替え用 */
+.scene-fade {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* 【新演出】画像が1枚ずつ切り替わる時のふわっとエフェクト */
+.img-fade {
+  animation: imgFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes imgFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ボタンの輝き */
+@layer utilities {
+  .animate-shine {
+    animation: shine 0.6s ease-in-out;
+  }
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
